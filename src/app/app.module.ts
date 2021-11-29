@@ -16,12 +16,20 @@ import { HomeDashComponent } from './home-dash/home-dash.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { StudentPageComponent } from './student-page/student-page.component';
+import { SettingsComponent } from './settings/settings.component';
+import { CoursePageComponent } from './course-page/course-page.component';
+import { CalendarPageComponent } from './calendar-page/calendar-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    HomeDashComponent
+    HomeDashComponent,
+    StudentPageComponent,
+    SettingsComponent,
+    CoursePageComponent,
+    CalendarPageComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +40,11 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeDashComponent},
+      {path: '', redirectTo: '/home', pathMatch: 'full'},
+      {path: 'student', component: StudentPageComponent},
+      {path: 'calendar', component: CalendarPageComponent},
+      {path: 'settings', component: SettingsComponent},
+      {path: 'courses', component: CoursePageComponent},
 
     ]),
     LayoutModule,
